@@ -22,14 +22,8 @@ services:
       - key: JIRA_TOKEN
         scope: runtime
         sync: false
-      - key: STREAMLIT_SERVER_HEADLESS
-        value: "true"
-      - key: PYTHONUNBUFFERED
-        value: "1"
-    buildCommand: "pip install --no-cache-dir -r requirements-prod.txt && mkdir -p personas output"
-    startCommand: "streamlit run hackGPTv23.py --server.port=8501 --server.address=0.0.0.0 --client.showErrorDetails=false"
     autoDeploy: true
     disk:
-      name: hackgpt-storage
-      mountPath: /app/data
+      name: hackgpt-data
+      mountPath: /app
       sizeGB: 1
