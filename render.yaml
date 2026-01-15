@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: hackgpt
+    env: docker
+    plan: free
+    repo: https://github.com/Stiphan680/hackGPT.git
+    branch: main
+    dockerfilePath: ./Dockerfile
+    ports:
+      - port: 8501
+        protocol: HTTP
+    envVars:
+      - key: OPENAI_API_KEY
+        scope: build
+        sync: false
+      - key: JIRA_SERVER
+        scope: build
+        sync: false
+      - key: JIRA_USER
+        scope: build
+        sync: false
+      - key: JIRA_TOKEN
+        scope: build
+        sync: false
+    buildCommand: "pip install --no-cache-dir -r requirements.txt && mkdir -p personas output"
+    startCommand: "streamlit run hackGPTv23.py --server.port 8501 --server.address 0.0.0.0"
+    autoDeploy: true
+    disk:
+      name: hackgpt-storage
+      mountPath: /app/data
+      sizeGB: 1
