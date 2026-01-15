@@ -1,0 +1,11 @@
+# Production-only lightweight dependencies
+streamlit==1.28.1
+openai>=1.3.0
+python-dotenv>=1.0.0
+pandas>=2.0.0
+requests>=2.31.0
+prettytable>=3.9.0
+altair>=5.0.0
+streamlit-chat>=0.0.2.2
+inquirer>=3.1.3
+python-jira>=3.4.1
