@@ -1,0 +1,1 @@
+transformers\nstreamlit-chat\nhuggingface-hub\ntorch\ntqdm\nstreamlit-extras\nhugchat\ndirectory_structure\nalive_progress\nfade\npython-dotenv\npathlib\nopenai\ngradio\nipywidgets\ninquirer\nprettytable\njira\nstreamlit>=1.0

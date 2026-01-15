@@ -1,0 +1,1 @@
+# JIRA hackGPT Integration\nimport os\nfrom jira import JIRA\nfrom dotenv import load_dotenv\nimport openai\n\nload_dotenv('.env')\n\njira_server = os.environ.get('JIRA_SERVER')\njira_user = os.environ.get('JIRA_USER')\njira_token = os.environ.get('JIRA_TOKEN')\nopenai.api_key = os.environ.get('OPENAI_API_KEY')
